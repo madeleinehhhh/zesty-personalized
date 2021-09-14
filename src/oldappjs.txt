@@ -1,0 +1,44 @@
+import "./styles.css"; // importing the css file; it's in the same folder (./)
+import React from "react";
+
+// here's an example with an implicit return
+/*
+const App = () => {
+  <> // you can think of empty tags as anonymous divs
+      // you can also write them out as <React.Fragment>
+      // with the empty tag, you can't have keys or attributes so should only be used for children
+      // if you use React.Fragment you can use keys and components
+    <h1>Hello CodeSandbox</h1>
+    {console.log("hello")} // in an implicit return you can still include JSX, it's just limited?
+  </>
+}
+*/
+
+// this is an example with an explicit return
+/*
+const App = () => { //this is the function definition for our app component.
+
+  const greeting ="hello world"
+
+  return ( // you can use either an explicit or implicit return. this has an explicit return.
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <p>{greeting}</p>
+    </div>
+  );
+}
+*/
+
+export default // the placement of the export statement is flexible. you can export multiple things.
+// make sure this is the last part of all your files
+
+// App.js is the "home" or "main" component
+// it renders all the other components 
+
+// there are two kinds of components in react
+// 1. functional components
+// 2. class components
+// we'll just start with functional components
+// functional components are basically JS functions.
+// they accept props as arguments and return a react element

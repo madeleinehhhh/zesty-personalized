@@ -1,0 +1,256 @@
+/* CSS DEBUG CODE */
+/* *:not(path):not(g) {
+  color: rgba(252, 255, 73, 0.9) !important;
+  background: hsla(210, 100%, 50%, 0.15) !important;
+  outline: solid 0.25rem rgba(252, 255, 73, 0.801) !important;
+  box-shadow: none !important;
+} */
+
+/* HERE WE SET THE COLORS */
+:root {
+  --clr-bg: #fbdd74;
+  --clr-text: #294910;
+  --clr-light: #fff;
+  --clr-neutral: #e8e8e8;
+
+  --clr-blue: #5788c0;
+
+  --clr-cabbage: #c09ec1;
+  --clr-mango: #ebc44d;
+  --clr-fig: #e3a290;
+  --clr-gaze: #96a3c6;
+  --clr-peach: #f2aa3b;
+  --clr-avocado: #d9d979;
+
+  --clr-cabbage-dark: #53091d;
+  --clr-mango-dark: #bc7900;
+  --clr-fig-dark: #9a2a07;
+  --clr-gaze-dark: #164b7c;
+  --clr-peach-dark: #d77643;
+  --clr-avocado-dark: #354d01;
+}
+
+/* HERE ARE THE RESETS */
+* {
+  box-sizing: border-box;
+}
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+}
+
+/* HERE WE SET BODY STYLES */
+body {
+  color: var(--clr-text);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* THIS IS THE main DIV FOR THE PAGE */
+main {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-between;
+}
+.background6 {
+  background-color: var(--clr-cabbage);
+}
+.background1 {
+  background-color: var(--clr-mango);
+}
+.background3 {
+  background-color: var(--clr-fig);
+}
+.background5 {
+  background-color: var(--clr-gaze);
+}
+.background2 {
+  background-color: var(--clr-peach);
+}
+.background4 {
+  background-color: var(--clr-avocado);
+}
+.color5 {
+  color: var(--clr-cabbage-dark);
+}
+.color3 {
+  color: var(--clr-mango-dark);
+}
+.color6 {
+  color: var(--clr-fig-dark);
+}
+.color4 {
+  color: var(--clr-gaze-dark);
+}
+.color1 {
+  color: var(--clr-peach-dark);
+}
+.color2 {
+  color: var(--clr-avocado-dark);
+}
+
+/* these are in the header */
+h1 {
+  font-weight: 800;
+  font-size: 16vw;
+  margin: 0;
+  padding: 4vh 4vw;
+  line-height: 1;
+  font-weight: 300;
+  font-style: italic;
+}
+h2 {
+  position: fixed;
+  bottom: 0;
+  font-size: 1.4em;
+}
+
+h2,
+figcaption {
+  line-height: 2;
+  padding: 2vh 4vw;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* THIS IS THE SLIDESHOW */
+figure {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 1.8em;
+}
+figcaption {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 50%;
+  text-align: center;
+}
+img {
+  height: 100%;
+  object-fit: cover;
+  width: 50%;
+  opacity: 0;
+  position: fixed;
+}
+.display {
+  opacity: 1;
+}
+.hide {
+  opacity: 0;
+}
+#nav-arrow {
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 50%;
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
+}
+#arrow-left {
+  text-align: left;
+}
+#arrow-right {
+  text-align: right;
+}
+#arrow-left,
+#arrow-right {
+  /* border: 10px solid green; */
+  font-size: 16vw;
+  font-weight: 200;
+  width: 25%;
+}
+#arrow-left p,
+#arrow-right p {
+  cursor: pointer;
+}
+
+aside {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: var(--clr-neutral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.loading-bar {
+  display: grid;
+  grid-row-gap: 2vw;
+  max-width: 50vw;
+  padding: 2vw;
+}
+
+progress {
+  border: 0.1rem solid var(--clr-text);
+  height: 1rem;
+  width: 25rem;
+  max-width: 35vw;
+}
+
+progress[value]::-webkit-progress-bar {
+  background: var(--clr-neutral);
+}
+
+progress[value]::-webkit-progress-value {
+  background: var(--clr-text);
+}
+
+@media (max-width: 850px) {
+  main {
+    flex-direction: column;
+  }
+  .loading-bar {
+    max-width: 100vw;
+  }
+
+  progress {
+    max-width: 75vw;
+  }
+
+  figure,
+  img,
+  figcaption,
+  #nav-arrow {
+    width: 100%;
+  }
+  figure {
+    flex-grow: 1;
+  }
+
+  h2 {
+    font-size: 1em;
+    position: relative;
+    hyphens: auto;
+    padding: 2vh 2vw;
+  }
+  figcaption {
+    padding: 2vh 2vw;
+  }
+  h1 {
+    font-size: 4em;
+    hyphens: auto;
+    padding: 2vh 2vw;
+  }
+}
+
+#nav-arrow {
+  height: 80%;
+}
